@@ -1,0 +1,1 @@
+V6 FIX: surat kembali memakai alur amplop -> kertas keluar. Tambahkan voice.mp3 di assets/audio jika ingin sinkron suara.

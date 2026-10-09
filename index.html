@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Untukmu, Dari Cerita Kita</title>
+  <meta name="description" content="Sebuah halaman kecil untuk membuka kembali beberapa malam, percakapan, tawa, doa, dan hal-hal sederhana yang akhirnya menjadi berarti.">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <div class="mini-orbit"><span></span></div>
+      <div class="preloader-text">membuka kembali cerita...</div>
+    </div>
+  </div>
+
+  <div class="ambient ambient-1"></div>
+  <div class="ambient ambient-2"></div>
+  <div class="grain"></div>
+  <div id="particleField" class="particle-field" aria-hidden="true"></div>
+  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
+
+  <div id="scrollProgress" class="scroll-progress"></div>
+
+  <nav class="floating-nav" aria-label="Navigasi cerita">
+    <a href="#home" data-section="home" title="Awal"><i class="bi bi-house-heart"></i></a>
+    <a href="#awal" data-section="awal" title="Awal cerita"><i class="bi bi-moon-stars"></i></a>
+    <a href="#lucunya" data-section="lucunya" title="Lucunya kita"><i class="bi bi-stars"></i></a>
+    <a href="#tulis" data-section="tulis" title="Surat & suara"><i class="bi bi-envelope-heart"></i></a>
+    <a href="#perlahan" data-section="perlahan" title="Perlahan"><i class="bi bi-arrow-through-heart"></i></a>
+    <a href="#tentang" data-section="tentang" title="Tentang kita"><i class="bi bi-images"></i></a>
+    <a href="#iman" data-section="iman" title="Sebuah pengingat"><i class="bi bi-heart"></i></a>
+    <a href="#langkah" data-section="langkah" title="Sebuah langkah kecil"><i class="bi bi-signpost-2"></i></a>
+    <a href="#pelabuhan" data-section="pelabuhan" title="Pelabuhan terakhir"><i class="bi bi-water"></i></a>
+  </nav>
+
+  <audio id="bgMusic" src="assets/audio/rest-of-my-life.mp3" loop preload="metadata"></audio>
+  <button id="musicBtn" class="music-btn" type="button" aria-label="Nyalakan musik" title="Musik">
+    <i class="bi bi-music-note-beamed"></i>
+  </button>
+  <button id="sfxBtn" class="music-btn sfx-btn" type="button" aria-label="Efek suara" aria-pressed="true" title="Efek suara">
+    <i class="bi bi-volume-up"></i>
+  </button>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero section-shell">
+      <div class="hero-orbit orbit-a"></div>
+      <div class="hero-orbit orbit-b"></div>
+      <div class="hero-glow"></div>
+
+      <div class="container position-relative z-2">
+        <div class="hero-content mx-auto">
+          <div class="eyebrow hero-eyebrow">Untukmu, dari cerita kita</div>
+          <h1 class="hero-name" id="heroName" aria-label="Andhara Felicia Evelyn Rantelino">
+            <span class="hero-stage">
+              <span class="hero-first" id="heroFirst">Andhara</span>
+              <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+            </span>
+            <span class="hero-rest">Felicia Evelyn Rantelino</span>
+          </h1>
+          <button id="startBtn" class="btn-glow" type="button">
+            <span>Buka kisah ini</span>
+            <i class="bi bi-arrow-down-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#awal">
+        <span>mulai perlahan</span>
+        <i class="bi bi-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- 01 AWAL -->
+    <section id="awal" class="section-shell story-section awal-section">
+      <div class="container">
+        <div class="eyebrow reveal">01 — awal</div>
+        <div class="row g-5 awal-grid">
+
+          <!-- cerita: tiap paragraf menyalakan "malam" di sebelah kanan -->
+          <div class="col-lg-7">
+            <div class="awal-story" id="awalStory">
+              <span class="rail-num">01</span>
+              <span class="rail-dot" aria-hidden="true"></span>
+              <p class="beat is-on" data-scene="0">Sebelum menjadi kita, kita hanya dua orang yang suka menghabiskan malam.
+Duduk di Kopi Kenangan, mengobrol tentang banyak hal, bercanda, dan kadang lupa kalau waktu sudah terlalu larut.</p>
+              <p class="beat" data-scene="0">Saat itu semuanya terasa biasa saja. Kita hanya menikmati waktu yang ada, tanpa pernah berpikir bahwa malam-malam sederhana itu suatu hari akan menjadi bagian dari cerita yang ingin selalu kuingat.</p>
+              <p class="beat" data-scene="1">Lalu datanglah liburan yang panjang.
+Kita tidak lagi sering bertemu seperti sebelumnya. Tapi ternyata, jarak tidak benar-benar membuat kita berhenti menghabiskan waktu bersama.</p>
+              <p class="beat" data-scene="1">Kita pindah ke Discord.
+Dari sana, malam-malam kita kembali terisi oleh obrolan, tawa, dan permainan.</p>
+              <p class="beat" data-scene="1"><span class="lead">Roblox. Minecraft.</span>
+Kita bermain bersama, membangun sesuatu di dalam dunia yang sebenarnya hanya sebuah permainan.</p>
+              <p class="beat" data-scene="1">Tapi lucunya, mungkin tanpa kita sadari, saat kita sibuk membangun dunia di Minecraft, kita juga sedang membangun sesuatu di antara kita.</p>
+              <p class="beat" data-scene="2">Hari-hari berlalu.
+Permainan selesai, tapi percakapannya tidak.
+Sampai akhirnya, kita mulai beralih dari layar permainan ke telepon WhatsApp.
+Yang awalnya mungkin hanya ingin berbicara sebentar, berubah menjadi percakapan panjang yang tidak terasa sampai malam berganti pagi.</p>
+              <p class="beat pull" data-scene="2">Sampai subuh.</p>
+              <p class="beat" data-scene="2">Dan di titik itu aku mulai sadar, mungkin yang membuatku betah bukan lagi permainannya.
+<span class="kamu">Tapi kamu.</span></p>
+            </div>
+          </div>
+
+          <!-- jendela malam yang bisa digeser -->
+          <div class="col-lg-5 order-first order-lg-last">
+            <div class="night-dock reveal" id="nightDock">
+              <div class="night-card" id="nightCard">
+                <svg class="night-scene" id="nightScene" data-scene="0" viewBox="0 0 400 580" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="nsMid" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#06040f"/><stop offset=".6" stop-color="#140b25"/><stop offset="1" stop-color="#2a1432"/>
+                    </linearGradient>
+                    <linearGradient id="nsDusk" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#1f1337"/><stop offset=".55" stop-color="#7a3263"/><stop offset="1" stop-color="#f4a381"/>
+                    </linearGradient>
+                    <linearGradient id="nsDawn" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#0a0a22"/><stop offset=".5" stop-color="#27285f"/><stop offset=".8" stop-color="#b3628f"/><stop offset="1" stop-color="#f6b592"/>
+                    </linearGradient>
+                    <linearGradient id="nsWall" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#150b1c"/><stop offset="1" stop-color="#08040c"/>
+                    </linearGradient>
+                    <linearGradient id="nsSill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#3b2444"/><stop offset="1" stop-color="#1a0f21"/>
+                    </linearGradient>
+                    <linearGradient id="nsCupA" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#ffe3f1"/><stop offset="1" stop-color="#d98fb9"/>
+                    </linearGradient>
+                    <linearGradient id="nsCupB" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#ece3ff"/><stop offset="1" stop-color="#9a7fd8"/>
+                    </linearGradient>
+                    <linearGradient id="nsScreen" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#5a2a69"/><stop offset="1" stop-color="#cc5f98"/>
+                    </linearGradient>
+                    <radialGradient id="nsGlowWarm"><stop offset="0" stop-color="#ffb985" stop-opacity=".5"/><stop offset="1" stop-color="#ffb985" stop-opacity="0"/></radialGradient>
+                    <radialGradient id="nsGlowPink"><stop offset="0" stop-color="#f0b0d7" stop-opacity=".46"/><stop offset="1" stop-color="#f0b0d7" stop-opacity="0"/></radialGradient>
+                    <radialGradient id="nsGlowMoon"><stop offset="0" stop-color="#ffe9f5" stop-opacity=".4"/><stop offset="1" stop-color="#ffe9f5" stop-opacity="0"/></radialGradient>
+                    <mask id="nsCrescent" maskUnits="userSpaceOnUse" x="-40" y="-40" width="80" height="80">
+                      <rect x="-40" y="-40" width="80" height="80" fill="#fff"/>
+                      <circle cx="10" cy="-5" r="20" fill="#000"/>
+                    </mask>
+                  </defs>
+
+                  <!-- langit: tiga suasana yang saling menimpa -->
+                  <rect width="400" height="392" fill="url(#nsMid)"/>
+                  <rect id="nsDuskRect" width="400" height="392" fill="url(#nsDusk)"/>
+                  <rect id="nsDawnRect" width="400" height="392" fill="url(#nsDawn)" opacity="0"/>
+                  <g id="nsStars"></g>
+
+                  <!-- lintasan bulan + penanda jam -->
+                  <path class="ns-arc" d="M64 300 Q200 0 336 300"/>
+                  <g id="nsTicks"></g>
+                  <g id="nsMoon" transform="translate(64 300)">
+                    <circle r="66" fill="url(#nsGlowMoon)"/>
+                    <circle r="23" fill="#fff0f8" mask="url(#nsCrescent)"/>
+                  </g>
+
+                  <!-- kota -->
+                  <g id="nsFar"></g>
+                  <g id="nsNear"></g>
+                  <path class="ns-pane" d="M200 12V384M12 200H388"/>
+
+                  <!-- bingkai jendela + ambang -->
+                  <path fill="#120a19" fill-rule="evenodd" d="M0 0H400V404H0Z M12 384V200A188 188 0 0 1 388 200V384Z"/>
+                  <path class="ns-molding" d="M12 384V200A188 188 0 0 1 388 200V384"/>
+                  <rect x="0" y="384" width="400" height="20" fill="url(#nsSill)"/>
+                  <rect x="0" y="384" width="400" height="1.2" fill="#fff" opacity=".14"/>
+                  <rect x="0" y="404" width="400" height="176" fill="url(#nsWall)"/>
+
+                  <!-- cahaya di ambang -->
+                  <ellipse id="nsGlowCup" cx="200" cy="352" rx="170" ry="112" fill="url(#nsGlowWarm)"/>
+                  <ellipse id="nsGlowBlk" cx="200" cy="344" rx="170" ry="120" fill="url(#nsGlowPink)" opacity="0"/>
+                  <ellipse id="nsGlowPh" cx="200" cy="334" rx="150" ry="120" fill="url(#nsGlowPink)" opacity="0"/>
+
+                  <!-- 1. Kopi Kenangan: dua cangkir -->
+                  <g id="nsCup" class="ns-prop" transform="translate(200 384)">
+                    <g transform="translate(-52 0)">
+                      <ellipse cx="0" cy="-2" rx="37" ry="6.5" fill="#2b1731" stroke="#fff" stroke-opacity=".16"/>
+                      <path d="M26 -41Q45 -41 42 -27Q40 -16 22 -19" fill="none" stroke="#e8b5d3" stroke-width="5" stroke-linecap="round"/>
+                      <path d="M-27 -48H27L22 -9Q20.5 -3.5 15 -3.5H-15Q-20.5 -3.5 -22 -9Z" fill="url(#nsCupA)"/>
+                      <ellipse cx="0" cy="-48" rx="27" ry="5.5" fill="#3c2229"/>
+                      <ellipse cx="-6" cy="-48.6" rx="12" ry="2" fill="#fff" opacity=".18"/>
+                      <path class="ns-steam" style="--l:0s" d="M-9 -58q-7 -12 0 -22q7 -10 0 -20"/>
+                      <path class="ns-steam" style="--l:1.2s" d="M6 -58q-7 -12 0 -22q7 -10 0 -20"/>
+                    </g>
+                    <g transform="translate(52 0) scale(-1 1)">
+                      <ellipse cx="0" cy="-2" rx="37" ry="6.5" fill="#2b1731" stroke="#fff" stroke-opacity=".16"/>
+                      <path d="M26 -41Q45 -41 42 -27Q40 -16 22 -19" fill="none" stroke="#b9a2ee" stroke-width="5" stroke-linecap="round"/>
+                      <path d="M-27 -48H27L22 -9Q20.5 -3.5 15 -3.5H-15Q-20.5 -3.5 -22 -9Z" fill="url(#nsCupB)"/>
+                      <ellipse cx="0" cy="-48" rx="27" ry="5.5" fill="#3c2229"/>
+                      <ellipse cx="-6" cy="-48.6" rx="12" ry="2" fill="#fff" opacity=".18"/>
+                      <path class="ns-steam" style="--l:.6s" d="M-9 -58q-7 -12 0 -22q7 -10 0 -20"/>
+                      <path class="ns-steam" style="--l:1.8s" d="M6 -58q-7 -12 0 -22q7 -10 0 -20"/>
+                    </g>
+                  </g>
+
+                  <!-- 2. Roblox & Minecraft: balok yang disusun berdua (dibuat lewat JS) -->
+                  <g id="nsBlk" class="ns-prop" transform="translate(200 384)"></g>
+
+                  <!-- 3. Sampai subuh: telepon yang masih menyala -->
+                  <g id="nsPhone" class="ns-prop" transform="translate(200 384)">
+                    <ellipse cx="0" cy="-1" rx="34" ry="5" fill="#000" opacity=".35"/>
+                    <g transform="rotate(-4 0 -4)">
+                      <circle class="ns-ring" style="--l:0s" cx="0" cy="-62" r="30"/>
+                      <circle class="ns-ring" style="--l:1.07s" cx="0" cy="-62" r="30"/>
+                      <circle class="ns-ring" style="--l:2.14s" cx="0" cy="-62" r="30"/>
+                      <rect x="-27" y="-114" width="54" height="110" rx="10" fill="#120a18" stroke="#fff" stroke-opacity=".3" stroke-width="1.5"/>
+                      <rect x="-23" y="-110" width="46" height="102" rx="7" fill="url(#nsScreen)"/>
+                      <circle cx="0" cy="-84" r="11" fill="#fff" fill-opacity=".2" stroke="#fff" stroke-opacity=".5"/>
+                      <circle cx="0" cy="-88" r="3.6" fill="#fff" fill-opacity=".7"/>
+                      <path d="M-6.5 -78Q0 -85 6.5 -78" fill="#fff" fill-opacity=".7"/>
+                      <g id="nsBars"></g>
+                      <rect x="-8" y="-112" width="16" height="3" rx="1.5" fill="#06030a"/>
+                    </g>
+                  </g>
+                </svg>
+
+                <div class="night-caption">
+                  <small id="nightClock">03:47 AM</small>
+                  <p>Mungkin yang membuatku betah bukan lagi permainannya.<br><em>Tapi kamu.</em></p>
+                </div>
+              </div>
+
+              <div class="memory-floating night-scrub" id="nightScrub" aria-label="kenangan kecil kita">
+                <button class="memory-orb" data-memory="kopi" type="button"><i class="bi bi-cup-hot"></i><span>Kopi Kenangan</span></button>
+                <button class="memory-orb" data-memory="game" type="button"><i class="bi bi-controller"></i><span>Roblox & Minecraft</span></button>
+                <button class="memory-orb" data-memory="subuh" type="button"><i class="bi bi-moon-stars"></i><span>Sampai subuh</span></button>
+                <div class="scrub-track" id="scrubTrack">
+                  <span class="scrub-fill"></span>
+                  <span class="scrub-tick" style="left:0"></span>
+                  <span class="scrub-tick" style="left:50%"></span>
+                  <span class="scrub-tick" style="left:100%"></span>
+                  <button class="scrub-knob nudge" id="scrubKnob" type="button" role="slider" aria-label="Geser malam" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0"></button>
+                </div>
+              </div>
+              <p id="memoryReplay" class="memory-replay-text" aria-live="polite">Sebuah kenangan kecil yang mungkin sederhana, tetapi berarti.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 LUCUNYA KITA -->
+    <section id="lucunya" class="section-shell story-section alt-space">
+      <div class="container">
+        <div class="eyebrow reveal">02 — lucunya kita</div>
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8 reveal">
+            <h2 class="section-title">Yang kita kira akan menjadi <em>cerita orang lain</em>.</h2>
+            <article class="glass-panel story-panel">
+              <div class="story-copy">
+                <p>
+Kita sebenarnya tidak pernah merencanakan untuk menjadi kita.
+Kita bahkan pernah berniat menjodohkan orang lain.
+
+Yang kita kira akan menjadi cerita orang lain, ternyata menjadi awal cerita kita.
+
+Barangkali memang semesta suka menyelipkan kejutan di jalan yang nggak pernah kita pilih.
+Kita nggak pernah benar-benar mencari, apalagi menunggu. Kita cuma dua orang yang kebetulan melintas di persimpangan yang sama, membawa kisah yang berbeda, lalu waktu memperkenalkan kita dengan caranya sendiri.
+
+Lucunya, dulu kita sibuk bikin bahagia buat orang lain. Kita pengen lihat orang lain menemukan muaranya. Tanpa sadar, jembatan yang kita bangun justru membawa langkah kita saling bertemu.
+
+Sejak saat itu, aku belajar percaya bahwa beberapa pertemuan memang nggak perlu alasan. Dia datang tanpa aba-aba, tanpa janji, tanpa suara, tapi diam-diam menetap lebih lama dari yang kita bayangkan.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-4 reveal">
+            <div class="twist-card">
+              <div class="twist-ring"><i class="bi bi-arrow-repeat"></i></div>
+              <span>plot twist</span>
+              <strong>Yang dicari<br>orang lain,<br>malah datang<br>ke kita.</strong>
+              <small>— lucunya kita</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CENTERPIECE LETTER + VOICE -->
+    <section id="tulis" class="section-shell letter-section">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="eyebrow">06 — yang ingin kutulis</div>
+          <h2 class="section-title">Sebuah surat, <em>untukmu.</em></h2>
+          <p class="section-lead mx-auto">Kali ini, biarkan suaraku yang membacanya. Kata-kata di dalam surat akan terbuka perlahan, mengikuti suara.</p>
+          <div class="letter-scene-caption"><i class="bi bi-moon-stars"></i> sebuah surat kecil dari malam yang pernah kita habiskan bersama</div>
+        </div>
+
+        <div class="letter-reader reveal">
+          <div class="letter-reader-top">
+            <span><i class="bi bi-soundwave"></i> voice letter</span>
+            <span id="letterReaderStatus">siap dibacakan</span>
+          </div>
+
+            <div class="voice-dock">
+              <div class="voice-dock-icon" id="voicePlayOrb" role="button" tabindex="0" aria-label="Putar suara">
+                <i class="bi bi-play-fill"></i>
+              </div>
+
+              <div class="voice-dock-main">
+                <div class="voice-dock-title-row">
+                  <div>
+                    <div class="voice-dock-kicker">dengarkan surat ini</div>
+                    <h3>Suara yang ingin kusampaikan.</h3>
+                  </div>
+                  <div id="voiceTime" class="voice-time">00:00 / 00:00</div>
+                </div>
+
+                <div class="voice-wave" id="voiceWave" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+
+                <input id="voiceSeek" class="voice-seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Posisi suara">
+
+                <div class="voice-dock-bottom">
+                  <span id="voiceStatus">Tekan play. Suaramu akan membacakan surat ini.</span>
+                  <span id="voicePercent">0%</span>
+                </div>
+              </div>
+            </div>
+
+
+          <div class="letter-stage">
+            <div class="letter-halo"></div>
+            <div class="desk-light"></div>
+
+            <div id="envelope" class="envelope">
+              <div class="env-back"></div>
+
+              <article id="letterSheet" class="letter-sheet" aria-label="Surat untukmu">
+                <div class="letter-paper-inner">
+                  <div class="paper-fold"></div>
+                  <div class="letter-date">yang ingin kutulis</div>
+                  <div class="letter-title" id="letterTitle">Untukmu,</div>
+                  <div class="letter-to" id="letterTo">Andhara Felicia Evelyn Rantelino</div>
+
+                  <div id="poemSync" class="poem" aria-live="polite">
+                    <p class="sync-paragraph">Mungkin memang benar, kau bukan cinta pertama yang membuatku berdebar-debar. Kau justru hadir dengan cara paling sederhana yang kukenal.</p>
+                    <p class="sync-paragraph">Saat itu, aku melihatmu di seberang, seakan dunia tetap baik-baik saja. Padamu, aku tak perlu berlayar, karena seluruhmu adalah pelabuhan terakhir tempat hatiku akan selalu bertepi.</p>
+                    <p class="sync-paragraph">Aku tak pandai merangkai rayuan, tidak pula lihai memilih kata-kata yang sempurna. Aku hanya pandai mengingat hal-hal kecil tentangmu, cara membuatmu tertawa dan tersenyum seakan alam semesta ikut bahagia, dan caramu menjadi dirimu sendiri di dunia yang sering kali meminta kita untuk berpura-pura.</p>
+                    <p class="sync-paragraph">Kau bukan manusia tanpa celah, sebab kesempurnaan hanya dimiliki oleh Sang Pencipta. Aku pun tak ingin mencintaimu hanya karena segalanya terasa indah.</p>
+                    <p class="sync-paragraph">Aku ingin mencintaimu dalam hal-hal sederhana yang mungkin tak disadari siapa-siapa. Pada kebiasaan kecilmu, pada caramu bercerita, pada senyummu yang mungkin bagimu biasa saja, tetapi bagiku memiliki arti yang tak sederhana.</p>
+                    <p class="sync-paragraph">Sebab pada akhirnya, aku jatuh hati bukan karena kesempurnaanmu, melainkan karena ketulusanmu untuk tetap menjadi dirimu sendiri.</p>
+                    <p class="sync-paragraph">Dan jika suatu hari nanti aku harus memilih lagi, aku tetap ingin namamu menjadi nama terakhir yang kutulis bukan sekadar untuk tinggal di hati, tetapi untuk berakhir seatap denganku.</p>
+                    <div class="letter-from"><span>dari</span><strong>Abednego Kurnia Wahono</strong></div>
+                  </div>
+
+                  <div class="letter-mark"><i class="bi bi-suit-heart-fill"></i></div>
+                </div>
+              </article>
+
+              <div class="env-front"></div>
+              <div class="env-flap"></div>
+
+              <button id="seal" class="env-seal" type="button" aria-label="Buka surat">
+                <i class="bi bi-heart-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="letter-controls">
+            <div class="letter-actions d-flex justify-content-center flex-wrap gap-2">
+              <button id="openLetter" class="btn-glow" type="button">
+                <span>Buka surat</span><i class="bi bi-envelope-open"></i>
+              </button>
+              <button id="closeLetter" class="btn-soft d-none" type="button">
+                <span>Tutup surat</span><i class="bi bi-envelope"></i>
+              </button>
+              <button id="readLetter" class="btn-soft" type="button">
+                <span>Baca sendiri</span><i class="bi bi-book"></i>
+              </button>
+            </div>
+
+            <audio id="voiceAudio" preload="metadata" src="assets/audio/voice.mp3"></audio>
+
+            <div class="sync-hint">
+              <i class="bi bi-magic"></i>
+              Saat suara berjalan, kata-kata di surat akan muncul satu per satu dan bagian yang sedang dibaca akan menyala.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 PERLAHAN -->
+    <section id="perlahan" class="section-shell story-section timeline-section">
+      <div class="container">
+        <div class="eyebrow reveal">03 — perlahan</div>
+        <h2 class="section-title reveal">Ternyata kita <em>tumbuh</em> dari hal-hal kecil.</h2>
+
+        <div class="chapters reveal" id="chapters">
+          <!-- jalur rasi bintang: klik titik untuk loncat ke bagian itu -->
+          <div class="chapter-path" id="chapterPath">
+            <svg class="chapter-path-svg" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="chapterGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#f0b0d7"/>
+                  <stop offset="1" stop-color="#a88de4"/>
+                </linearGradient>
+                <radialGradient id="chapterSpark">
+                  <stop offset="0" stop-color="#ffd8ec" stop-opacity=".85"/>
+                  <stop offset="1" stop-color="#f0b0d7" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <path class="path-base" d=""/>
+              <path class="path-lit" d=""/>
+              <circle class="path-spark-glow" r="16" cx="-40" cy="-40"/>
+              <circle class="path-spark" r="3.2" cx="-40" cy="-40"/>
+            </svg>
+            <button class="chapter-node" type="button" style="--x:9%;--y:66%" aria-label="Bagian 1"><span>01</span></button>
+            <button class="chapter-node" type="button" style="--x:36%;--y:30%" aria-label="Bagian 2"><span>02</span></button>
+            <button class="chapter-node" type="button" style="--x:64%;--y:70%" aria-label="Bagian 3"><span>03</span></button>
+            <button class="chapter-node" type="button" style="--x:91%;--y:34%" aria-label="Bagian 4"><span>04</span></button>
+          </div>
+
+          <div class="chapter-viewport">
+            <div class="chapter-track" id="chapterTrack" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Perlahan">
+
+              <article class="chapter" style="--g:84" role="group" aria-roledescription="slide" aria-label="1 dari 4">
+                <div class="chapter-visual" aria-hidden="true">
+                  <div class="pair"><div class="pair-float">
+                    <span class="pair-ring"></span>
+                    <span class="orb a"></span><span class="orb b"></span>
+                    <i class="bi bi-heart-fill pair-heart"></i>
+                  </div></div>
+                </div>
+                <div class="chapter-body">
+                  <h3>Awalnya kita hanya teman</h3>
+                  <p>Kita cuma menikmati kebersamaan seperti biasa.</p>
+                </div>
+              </article>
+
+              <article class="chapter" style="--g:50" role="group" aria-roledescription="slide" aria-label="2 dari 4">
+                <div class="chapter-visual" aria-hidden="true">
+                  <div class="pair"><div class="pair-float">
+                    <span class="pair-ring"></span>
+                    <span class="orb a"></span><span class="orb b"></span>
+                    <i class="bi bi-heart-fill pair-heart"></i>
+                  </div></div>
+                </div>
+                <div class="chapter-body">
+                  <h3>Kemudian kita semakin sering bersama</h3>
+                  <p>Dari malam-malam di Kopi Kenangan sampai Discord, Roblox, Minecraft, dan percakapan panjang.</p>
+                </div>
+              </article>
+
+              <article class="chapter" style="--g:20" role="group" aria-roledescription="slide" aria-label="3 dari 4">
+                <div class="chapter-visual" aria-hidden="true">
+                  <div class="pair"><div class="pair-float">
+                    <span class="pair-ring"></span>
+                    <span class="orb a"></span><span class="orb b"></span>
+                    <i class="bi bi-heart-fill pair-heart"></i>
+                  </div></div>
+                </div>
+                <div class="chapter-body">
+                  <h3>Tanpa sadar ada sesuatu yang berubah</h3>
+                  <p>Permainan selesai, tetapi kita tetap ingin berbicara.</p>
+                </div>
+              </article>
+
+              <article class="chapter is-final" style="--g:0" role="group" aria-roledescription="slide" aria-label="4 dari 4">
+                <div class="chapter-visual" aria-hidden="true">
+                  <div class="pair"><div class="pair-float">
+                    <span class="pair-ring"></span>
+                    <span class="orb a"></span><span class="orb b"></span>
+                    <i class="bi bi-heart-fill pair-heart"></i>
+                  </div></div>
+                </div>
+                <div class="chapter-body">
+                  <h3>Dan akhirnya kita menjadi kita</h3>
+                  <p>Sebuah awal yang sederhana, yang kemudian kita jalani bersama.</p>
+                  <div class="chapter-date">
+                    <time datetime="2026-08-16">16 Agustus 2026</time>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <div class="chapter-controls">
+            <button class="chapter-arrow" id="chapterPrev" type="button" aria-label="Sebelumnya"><i class="bi bi-arrow-left"></i></button>
+            <button class="chapter-arrow" id="chapterNext" type="button" aria-label="Berikutnya"><i class="bi bi-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 TENTANG KITA -->
+    <section id="tentang" class="section-shell gallery-section">
+      <div class="container">
+        <div class="eyebrow reveal">04 — tentang kita</div>
+        <div class="row align-items-end g-4">
+          <div class="col-lg-8 reveal">
+            <h2 class="section-title">Hal-hal kecil yang ingin <em>kuingat</em>.</h2>
+          </div>
+          <div class="col-lg-4 reveal">
+            <p class="section-lead">Beberapa hal mungkin terlihat biasa. Tapi justru bagian-bagian kecil itu yang ingin disimpan.</p>
+          </div>
+        </div>
+
+        <div class="gal reveal" id="gallery">
+          <div class="gal-bar">
+            <div class="gal-tabs">
+              <button class="gal-tab active" type="button" data-group="foto"><i class="bi bi-camera"></i><span>tentang kita</span></button>
+              <button class="gal-tab" type="button" data-group="game"><i class="bi bi-controller"></i><span>Roblox &amp; Minecraft</span></button>
+            </div>
+            <div class="gal-count" aria-hidden="true"><b id="galNow">01</b><span>/ 08</span></div>
+          </div>
+
+          <div class="gal-viewport">
+            <div class="gal-track" id="galTrack" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Foto kita">
+            <button class="gal-item gal-strip" type="button" data-group="foto" data-full="assets/images/foto1.jpg" style="--ar:0.4167;--tilt:-1.6deg" aria-label="Lihat foto 1 dari 8">
+              <span class="gal-frame">
+                <span class="gal-img"><img src="assets/images/foto1.jpg" alt="Foto kita 1" draggable="false" decoding="async"></span>
+              </span>
+              <span class="gal-zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <button class="gal-item gal-polaroid" type="button" data-group="foto" data-full="assets/images/foto2.jpg" style="--ar:0.7500;--tilt:1.4deg" aria-label="Lihat foto 2 dari 8">
+              <span class="gal-frame">
+                <span class="gal-img"><img src="assets/images/foto2.jpg" alt="Foto kita 2" draggable="false" decoding="async"></span><span class="gal-cap">tentang kita</span>
+              </span>
+              <span class="gal-zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <button class="gal-item gal-polaroid" type="button" data-group="foto" data-full="assets/images/foto3.jpg" style="--ar:1.5000;--tilt:-1.8deg" aria-label="Lihat foto 3 dari 8">
+              <span class="gal-frame">
+                <span class="gal-img"><img src="assets/images/foto3.jpg" alt="Foto kita 3" draggable="false" decoding="async"></span><span class="gal-cap">hal-hal kecil</span>
+              </span>
+              <span class="gal-zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <button class="gal-item gal-polaroid" type="button" data-group="foto" data-full="assets/images/foto4.jpg" style="--ar:0.5625;--tilt:1.8deg" aria-label="Lihat foto 4 dari 8">
+              <span class="gal-frame">
+                <span class="gal-img"><img src="assets/images/foto4.jpg" alt="Foto kita 4" draggable="false" decoding="async"></span><span class="gal-cap"></span>
+              </span>
+              <span class="gal-zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <button class="gal-item gal-polaroid" type="button" data-group="foto" data-full="assets/images/foto5.jpg" style="--ar:1.3333;--tilt:-1.2deg" aria-label="Lihat foto 5 dari 8">
+              <span class="gal-frame">
+                <span class="gal-img"><img src="assets/images/foto5.jpg" alt="Foto kita 5" draggable="false" decoding="async"></span><span class="gal-cap">yang ingin kuingat</span>
+              </span>
+              <span class="gal-zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <span class="gal-sep" aria-hidden="true"><i class="bi bi-controller"></i></span>
+            <button class="gal-item gal-screen" type="button" data-group="game" data-full="assets/images/game1.jpg" style="--ar:1.7798;--tilt:-.7deg" aria-label="Lihat foto 6 dari 8">
+              <span class="gal-frame">
+                <span class="gal-img"><img src="assets/images/game1.jpg" alt="Kita di dunia game 1" draggable="false" decoding="async"></span>
+              </span><span class="gal-badge"><i class="bi bi-controller"></i></span>
+              <span class="gal-zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <button class="gal-item gal-screen" type="button" data-group="game" data-full="assets/images/game2.jpg" style="--ar:1.7778;--tilt:.6deg" aria-label="Lihat foto 7 dari 8">
+              <span class="gal-frame">
+                <span class="gal-img"><img src="assets/images/game2.jpg" alt="Kita di dunia game 2" draggable="false" decoding="async"></span>
+              </span><span class="gal-badge"><i class="bi bi-controller"></i></span>
+              <span class="gal-zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            <button class="gal-item gal-screen" type="button" data-group="game" data-full="assets/images/game3.jpg" style="--ar:1.9417;--tilt:-.5deg" aria-label="Lihat foto 8 dari 8">
+              <span class="gal-frame">
+                <span class="gal-img"><img src="assets/images/game3.jpg" alt="Kita di dunia game 3" draggable="false" decoding="async"></span>
+              </span><span class="gal-badge"><i class="bi bi-controller"></i></span>
+              <span class="gal-zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+            </button>
+            </div>
+          </div>
+
+          <div class="gal-foot">
+            <div class="gal-progress" aria-hidden="true"><span id="galBar"></span></div>
+            <div class="gal-arrows">
+              <button class="chapter-arrow" id="galPrev" type="button" aria-label="Sebelumnya"><i class="bi bi-arrow-left"></i></button>
+              <button class="chapter-arrow" id="galNext" type="button" aria-label="Berikutnya"><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-5">
+          <div class="col-md-6 col-xl-3">
+            <article class="memory-card reveal" tabindex="0">
+              <div class="memory-top"><span>01</span><i class="bi bi-sunrise"></i></div>
+              <h3>Senyummu</h3>
+              <div class="memory-detail">Senyummu yang mungkin bagimu biasa saja, tetapi bagiku memiliki arti yang tak sederhana.</div>
+              <div class="memory-tap">sentuh untuk membuka</div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="memory-card reveal" tabindex="0">
+              <div class="memory-top"><span>02</span><i class="bi bi-chat-heart"></i></div>
+              <h3>Caramu bercerita</h3>
+              <div class="memory-detail">Pada caramu bercerita, ada banyak hal yang akhirnya ingin terus kudengarkan.</div>
+              <div class="memory-tap">sentuh untuk membuka</div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="memory-card reveal" tabindex="0">
+              <div class="memory-top"><span>03</span><i class="bi bi-person-heart"></i></div>
+              <h3>Caramu menjadi dirimu</h3>
+              <div class="memory-detail">Caramu menjadi dirimu sendiri di dunia yang sering kali meminta kita untuk berpura-pura.</div>
+              <div class="memory-tap">sentuh untuk membuka</div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="memory-card reveal" tabindex="0">
+              <div class="memory-top"><span>04</span><i class="bi bi-stars"></i></div>
+              <h3>Kesederhanaan</h3>
+              <div class="memory-detail">Barangkali beberapa cerita memang tumbuh dari tawa, percakapan panjang, dan malam-malam yang kita lewati bersama.</div>
+              <div class="memory-tap">sentuh untuk membuka</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 IMAN -->
+    <section id="iman" class="section-shell faith-section">
+      <div class="container">
+        <div class="faith-orbit" aria-hidden="true"></div>
+        <div class="row justify-content-center">
+          <div class="col-xl-9 reveal">
+            <div class="faith-card">
+              <div class="eyebrow text-center">08 — sebuah pengingat</div>
+              <div class="verse-mark">“</div>
+              <div class="verse">“Di atas semuanya itu: kenakanlah kasih, sebagai pengikat yang mempersatukan dan menyempurnakan.”</div>
+              <div class="ref">Kolose 3:14</div>
+              <div class="faith-divider"><i class="bi bi-heart-fill"></i></div>
+              <p>
+Mungkin cinta tidak selalu membutuhkan sesuatu yang besar.
+Kadang, ia hanya membutuhkan dua hati yang mau saling memahami, dan kasih yang membuat keduanya memilih untuk tetap berjalan bersama.
+
+Aku tidak ingin hubungan ini hanya tentang bagaimana kita saling mencintai. Aku ingin belajar bagaimana mengasihi dengan cara yang Tuhan ajarkan.
+Lebih sabar ketika kita berbeda, lebih lembut ketika salah satu sedang lelah, dan lebih mau memahami daripada sekadar ingin dimengerti.
+
+Karena mungkin cinta yang sederhana bukan cinta yang tidak memiliki banyak hal untuk diberikan, tetapi cinta yang tahu bahwa kehadiran, perhatian, dan kesediaan untuk tetap tinggal sudah menjadi sesuatu yang berarti.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 LANGKAH KECIL -->
+    <section id="langkah" class="section-shell reflection-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-8 reveal">
+            <div class="eyebrow">sebuah langkah kecil</div>
+            <div class="reflection-card">
+              <p>
+Waktu pertama kali aku mengajakmu berjalan, sebenarnya aku tidak membawa sesuatu yang istimewa. Aku hanya membawa perasaan yang ingin kusampaikan, lalu kita menutupnya dengan sebuah doa.
+
+Sesederhana itu awalnya.
+
+Dan mungkin justru karena sederhana, aku ingin menjaganya tetap seperti itu.
+
+Hari-hari setelahnya membuatku sadar, bahwa ternyata mencintai seseorang bukan hanya tentang hari ketika kita mengatakan “iya”.
+Tetapi tentang hari-hari kecil setelahnya. Tentang belajar mengenal, belajar memahami, belajar menerima kekurangan, dan tetap memilih untuk berjalan bersama.
+
+Sebulan mungkin bukan waktu yang panjang. Tapi cukup untuk membuatku bersyukur karena dari begitu banyak jalan yang bisa kita lewati, Tuhan mempertemukan langkah kita di jalan yang sama.
+
+Aku tidak tahu sejauh apa perjalanan ini akan membawa kita. Aku hanya ingin menjalaninya dengan baik, dengan hati yang tetap sederhana, dan dengan doa yang selalu menyertai.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSISI -->
+    <section class="section-shell choice-section">
+      <div class="container">
+        <div class="choice-stage reveal">
+          <div class="choice-line"></div>
+          <p>
+Dulu aku hanya ingin mengatakan apa yang kurasakan.
+Aku mengajakmu berjalan, kita berbicara, lalu kita berdoa.
+Aku tidak tahu apakah langkah sederhana itu akan membawa kita sejauh ini.
+Ternyata, Tuhan punya cerita yang lebih indah daripada apa yang sempat kubayangkan.
+
+Dan sekarang, setelah semua percakapan, tawa, cerita, dan hari-hari kecil yang kita lewati, aku masih ingin mengatakan hal yang sama:
+            <span class="choose">Aku memilihmu.</span>
+Bukan karena aku tahu semua tentang hari esok, tetapi karena hari ini, aku bersyukur bisa berjalan bersamamu.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 PELABUHAN TERAKHIR -->
+    <section id="pelabuhan" class="section-shell final-section">
+      <div class="final-water"></div>
+      <div class="container position-relative z-2">
+        <div class="final-orbit"></div>
+        <div class="row justify-content-center text-center">
+          <div class="col-xl-10 reveal">
+            <div class="eyebrow">09 — pelabuhan terakhir</div>
+            <div class="harbour-text">Padamu, aku tak perlu berlayar.<span>Karena seluruhmu adalah pelabuhan terakhir tempat hatiku akan selalu bertepi.</span></div>
+            <p class="final-note">Aku tidak ingin mencintaimu dengan cara yang sempurna. Aku hanya ingin belajar mencintaimu dengan cara yang benar.</p>
+            <button id="topBtn" class="btn-soft" type="button"><span>Kembali ke awal</span><i class="bi bi-arrow-up"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span>Untukmu, dari cerita kita.</span>
+      <span class="footer-heart"><i class="bi bi-heart-fill"></i></span>
+    </div>
+  </footer>
+
+  <!-- Bootstrap image modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content image-modal-content">
+        <button type="button" class="image-modal-close" data-bs-dismiss="modal" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
+        <img id="modalImage" src="" alt="Foto cerita kita">
+        <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button>
+        <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Berikutnya"><i class="bi bi-chevron-right"></i></button>
+        <div class="lb-count" id="lbCount" aria-hidden="true">01 / 08</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
